@@ -15,7 +15,16 @@ class Calculator {
     wireEvents(): void {
         var btnAdd: HTMLButtonElement = <HTMLButtonElement>document.getElementById('btnAdd');
         btnAdd.addEventListener("click", event => {
-            this.result.innerText = "Hello";
+            var xValue: number = parseInt(this.x.value);
+            var yValue: number = parseInt(this.y.value);
+            this.result.innerText = (xValue + yValue).toString();
+        });
+
+        var btnSubtract: HTMLButtonElement = <HTMLButtonElement>document.getElementById('btnSubtract');
+        btnSubtract.addEventListener("click", event => {
+            var xValue: number = parseInt(this.x.value);
+            var yValue: number = parseInt(this.y.value);
+            this.result.innerText = (xValue - yValue).toString();
         });
     }
 }
